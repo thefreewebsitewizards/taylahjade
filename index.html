@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taylah Jade Coaching | UGC Creator & Mindset Coach</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cherry-red: #DC143C;
+            --cherry-red-dark: #B91C3C;
+            --cherry-red-light: #F87171;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Enhanced typography for better readability and elegance */
+        .hero-text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            letter-spacing: 0.025em;
+        }
+        
+        .elegant-text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
+            letter-spacing: 0.02em;
+        }
+        
+        .body-text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            line-height: 1.65;
+            letter-spacing: 0.015em;
+        }
+        
+        .accent-text {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.03);
+        }
+        
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(220, 20, 60, 0.3);
+        }
+        
+
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Product Advertisement Section Styles */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive adjustments for Product Advertisement */
+        @media (max-width: 768px) {
+            #product-advertisement .lg\:w-1\/2 {
+                width: 100%;
+            }
+            
+            #product-advertisement img {
+                width: 300px !important;
+                height: 400px !important;
+            }
+        }
+        
+        .slide-in-up {
+            animation: slideInUp 0.8s ease-out;
+        }
+        
+        .bg-cherry {
+            background-color: var(--cherry-red);
+        }
+        
+        .text-cherry {
+            color: var(--cherry-red);
+        }
+        
+        .border-cherry {
+            border-color: var(--cherry-red);
+        }
+        
+        .hover\:bg-cherry:hover {
+            background-color: var(--cherry-red-dark);
+        }
+        
+        .service-card {
+            background: linear-gradient(135deg, #ffffff 0%, #fef7f7 100%);
+            border: 1px solid #fecaca;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            border-color: var(--cherry-red);
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.15);
+            transform: translateY(-5px);
+        }
+
+        /* Enhanced Navigation Styles for Hero Section */
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+            transform-origin: center;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--cherry-red), #ffffff);
+            transition: left 0.4s ease;
+            border-radius: 2px;
+        }
+
+        .nav-link:hover::before {
+            left: 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(220, 20, 60, 0.1));
+            transition: width 0.3s ease;
+            border-radius: 8px;
+            z-index: -1;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Navbar scroll effect - changes to white background when scrolled */
+        .navbar-scrolled {
+            background: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(220, 20, 60, 0.1);
+        }
+
+        .navbar-scrolled .nav-link {
+            color: #374151 !important;
+        }
+
+        .navbar-scrolled .nav-link:hover {
+            color: var(--cherry-red) !important;
+        }
+
+        .navbar-scrolled span {
+            color: #374151 !important;
+        }
+
+        .navbar-scrolled span:hover {
+            color: var(--cherry-red) !important;
+        }
+
+        .navbar-scrolled button {
+            color: #374151 !important;
+        }
+
+        .navbar-scrolled button:hover {
+            color: var(--cherry-red) !important;
+            background: rgba(220, 20, 60, 0.1) !important;
+        }
+
+        /* Logo animation */
+        @keyframes logoGlow {
+            0%, 100% {
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+            }
+        }
+
+        .logo-glow:hover {
+            animation: logoGlow 2s ease-in-out infinite;
+        }
+
+        /* Enhanced hover effects for nav links */
+        .nav-link:hover {
+            transform: translateY(-2px);
+            text-shadow: 0 2px 8px rgba(220, 20, 60, 0.3);
+        }
+
+        /* CTA button enhancement for hero section */
+        .cta-button {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* Enhanced Mobile Responsiveness Improvements */
+        
+        /* Base mobile-first approach */
+        @media (max-width: 640px) {
+            /* Typography scaling for small screens */
+            .hero-text {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+            
+            .elegant-text {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+            
+            .body-text {
+                font-size: 15px;
+                line-height: 1.6;
+            }
+            
+            /* Hero section mobile improvements */
+            #home h1 {
+                font-size: 2.5rem !important;
+                line-height: 1.2;
+                margin-bottom: 1rem;
+            }
+            
+            #home p {
+                font-size: 16px !important;
+                margin-bottom: 1.5rem;
+                padding: 0 1rem;
+            }
+            
+            /* Button improvements for mobile */
+            .btn-hover {
+                padding: 12px 24px;
+                font-size: 16px;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 0.5rem;
+            }
+            
+            /* Navigation improvements */
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            /* About section mobile */
+            #about .lg\:w-1\/2 {
+                width: 100%;
+                text-align: center;
+            }
+            
+            #about img {
+                max-width: 280px;
+                margin: 0 auto 2rem auto;
+            }
+            
+            /* Services section mobile */
+            .service-card {
+                margin-bottom: 1rem;
+            }
+            
+            .service-card img {
+                height: 200px;
+            }
+            
+            .service-card .p-6 {
+                padding: 1rem;
+            }
+            
+            /* Featured service mobile */
+            .md\:flex {
+                flex-direction: column;
+            }
+            
+            .md\:w-1\/3, .md\:w-2\/3 {
+                width: 100%;
+            }
+            
+            .md\:p-12 {
+                padding: 1.5rem;
+            }
+            
+            /* Product advertisement mobile */
+            #product-advertisement .lg\:w-1\/2 {
+                width: 100%;
+                text-align: center;
+            }
+            
+            #product-advertisement img {
+                width: 280px !important;
+                height: 380px !important;
+                margin: 0 auto 1.5rem auto;
+            }
+            
+            /* Podcast section mobile */
+            .floating-player {
+                height: 400px !important;
+                margin-bottom: 1rem;
+            }
+            
+            .floating-player .p-4 {
+                padding: 1rem;
+            }
+            
+            /* YouTube section mobile */
+            .video-gallery-container {
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
+            }
+            
+            .main-video-section {
+                order: 1;
+            }
+            
+            .sidebar-thumbnails {
+                order: 2;
+                max-height: 300px;
+                padding: 1rem;
+            }
+            
+            .thumbnail-wrapper {
+                width: 80px;
+            }
+            
+            .thumbnail-info h4 {
+                font-size: 12px;
+                line-height: 1.3;
+            }
+            
+            .channel-meta {
+                font-size: 10px;
+            }
+            
+            /* Footer mobile improvements */
+            .grid.grid-cols-3 {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+            
+            .grid.grid-cols-3 > div {
+                text-align: center;
+            }
+            
+            /* Form improvements */
+            .flex.flex-col.sm\:flex-row {
+                flex-direction: column;
+            }
+            
+            .flex.flex-col.sm\:flex-row input {
+                margin-bottom: 0.5rem;
+                width: 100%;
+            }
+            
+            .flex.flex-col.sm\:flex-row button {
+                width: 100%;
+            }
+        }
+        
+        /* Medium screens (tablets) */
+        @media (min-width: 641px) and (max-width: 1024px) {
+            /* Hero section for tablets */
+            #home h1 {
+                font-size: 3.5rem;
+            }
+            
+            /* Services grid for tablets */
+            .grid.md\:grid-cols-2.lg\:grid-cols-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            /* Video gallery for tablets */
+            .video-gallery-container {
+                gap: 1.5rem;
+            }
+            
+            .thumbnail-wrapper {
+                width: 100px;
+            }
+        }
+        
+        /* Touch-friendly improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .hover-scale:hover {
+                transform: none;
+            }
+            
+            .btn-hover:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            
+            .nav-link:hover {
+                transform: none;
+                text-shadow: none;
+            }
+            
+            /* Increase touch targets */
+            .nav-link {
+                padding: 12px 16px;
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+            }
+            
+            .thumbnail-item {
+                padding: 16px 12px;
+                min-height: 60px;
+            }
+            
+            .podcast-episode {
+                padding: 16px 12px;
+                min-height: 60px;
+            }
+        }
+        
+        /* Landscape mobile orientation */
+        @media (max-width: 896px) and (orientation: landscape) {
+            #home {
+                min-height: 100vh;
+                padding: 1rem 0;
+            }
+            
+            #home h1 {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            #home p {
+                font-size: 14px;
+                margin-bottom: 1rem;
+            }
+            
+            .btn-hover {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+        
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+            .floating-animation {
+                animation: none;
+            }
+            
+            .fade-in {
+                transition: none;
+            }
+            
+            .hover-scale {
+                transition: none;
+            }
+            
+            .btn-hover {
+                transition: none;
+            }
+        }
+        
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .service-card {
+                border: 2px solid #000;
+            }
+            
+            .btn-hover {
+                border: 2px solid currentColor;
+            }
+        }
+
+        /* Video Gallery Styles - Adapted for Taylah Jade theme */
+.video-gallery-container {
+  display: flex;
+  gap: 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #FFF5F5;
+  font-family: 'Inter', sans-serif;
+  border-radius: 10px;
+}
+
+/* Main Video Section */
+.main-video-section {
+  flex: 2;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border: 2px solid #FFF5F5;
+  transition: all 0.3s ease;
+}
+
+.main-video-section:hover {
+  border-color: var(--cherry-red);
+  box-shadow: 0 10px 25px rgba(220, 38, 127, 0.15);
+}
+
+.video-thumbnail-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.main-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.main-thumbnail:hover {
+  transform: scale(1.02);
+}
+
+.play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.video-thumbnail-container:hover .play-overlay {
+  opacity: 1;
+}
+
+.play-button {
+  width: 68px;
+  height: 48px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--cherry-red);
+  transition: all 0.3s ease;
+  border: 2px solid var(--cherry-red);
+}
+
+.play-button:hover {
+  background: var(--cherry-red);
+  color: white;
+  transform: scale(1.1);
+}
+
+.video-info {
+  padding: 20px;
+}
+
+.channel-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.channel-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #FFF5F5;
+}
+
+.channel-name {
+  font-weight: 500;
+  color: #6b7280;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+}
+
+.video-title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #111827;
+  margin: 0;
+  transition: color 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Sidebar Thumbnails */
+.sidebar-thumbnails {
+  flex: 1;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 12px;
+  padding: 16px;
+  max-height: 80vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--cherry-red) #f1f5f9;
+  border: 2px solid #e5e7eb;
+}
+
+.sidebar-thumbnails::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-thumbnails::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.sidebar-thumbnails::-webkit-scrollbar-thumb {
+  background: var(--cherry-red);
+  border-radius: 3px;
+}
+
+.sidebar-thumbnails::-webkit-scrollbar-thumb:hover {
+  background: #be185d;
+}
+
+.thumbnail-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 8px;
+  border: 2px solid transparent;
+  background: white;
+}
+
+.thumbnail-item:hover {
+  background: #FFF5F5;
+  border-color: var(--cherry-red);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 38, 127, 0.15);
+}
+
+.thumbnail-item.active {
+  background: linear-gradient(135deg, #FFF5F5 0%, #FFF5F5 100%);
+  border-color: var(--cherry-red);
+  box-shadow: 0 4px 12px rgba(220, 38, 127, 0.2);
+}
+
+.thumbnail-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  width: 120px;
+  aspect-ratio: 16/9;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.thumbnail-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail-item:hover .thumbnail-wrapper img {
+  transform: scale(1.05);
+}
+
+.duration {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.thumbnail-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.thumbnail-info h4 {
+  color: #374151;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0 0 6px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.thumbnail-item:hover .thumbnail-info h4 {
+  color: var(--cherry-red);
+}
+
+.thumbnail-item.active .thumbnail-info h4 {
+  color: #be185d;
+  font-weight: 600;
+}
+
+.channel-meta {
+  color: #9ca3af;
+  font-size: 11px;
+  margin: 0;
+  line-height: 1.2;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .video-gallery-container {
+    flex-direction: column;
+    padding: 12px;
+    gap: 16px;
+  }
+  
+  .main-video-section {
+    order: 1;
+  }
+  
+  .sidebar-thumbnails {
+    order: 2;
+    max-height: 400px;
+  }
+  
+  .thumbnail-wrapper {
+    width: 100px;
+  }
+  
+  .thumbnail-info h4 {
+    font-size: 12px;
+  }
+}
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-transparent backdrop-blur-sm z-50 shadow-sm transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-8 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="flex items-center space-x-3 group">
+                    <span class="text-2xl font-display font-bold text-white hover:text-cherry transition-all duration-300">TAYLAH JADE COACHING</span>
+                </a>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-white hover:text-cherry focus:outline-none p-2 rounded-lg hover:bg-white/10 transition-all duration-300">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <div class="flex space-x-8 font-medium">
+                        <a href="#home" class="nav-link accent-text text-white hover:text-cherry font-medium text-lg transition-all duration-300 relative py-2 px-4 rounded-lg hover:bg-white/10">Home</a>
+                        <a href="#about" class="nav-link accent-text text-white hover:text-cherry font-medium text-lg transition-all duration-300 relative py-2 px-4 rounded-lg hover:bg-white/10">About</a>
+                        <a href="#services" class="nav-link accent-text text-white hover:text-cherry font-medium text-lg transition-all duration-300 relative py-2 px-4 rounded-lg hover:bg-white/10">Services</a>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Side Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 md:hidden transform -translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="absolute inset-0 bg-black bg-opacity-50" onclick="toggleMobileMenu()"></div>
+        <div class="relative w-64 h-full bg-white shadow-xl">
+            <div class="flex justify-end p-4">
+                <button onclick="toggleMobileMenu()" class="text-gray-800 focus:outline-none">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div class="px-4 py-0">
+                <a href="#home" class="block py-3 px-4 mb-2 hover:bg-cherry hover:text-white rounded-full transition-all duration-300">Home</a>
+                <a href="#about" class="block py-3 px-4 mb-2 hover:bg-cherry hover:text-white rounded-full transition-all duration-300">About</a>
+                <a href="#services" class="block py-3 px-4 mb-2 hover:bg-cherry hover:text-white rounded-full transition-all duration-300">Services</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center py-20 relative overflow-hidden">
+        <!-- Video Background -->
+        <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover z-0">
+            <source src="Images/hero-bg-video2.mp4" type="video/mp4">
+            <source src="Images/hero-bg-video1.mov" type="video/quicktime">
+            Your browser does not support the video tag.
+        </video>
+        
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+        
+        <div class="container mx-auto px-6 relative z-20">
+            <div class="text-center slide-in-up">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6 text-white leading-tight">
+                    Balance <span class="text-cherry">Hustle</span><br>
+                    & <span class="text-cherry">Pleasure</span>
+                </h1>
+                <p class="text-lg accent-text  sm:text-xl mb-8 text-white leading-relaxed max-w-2xl mx-auto hero-text">
+                    <span class="accent-text text-xl">Transform your mindset</span> and master the art of balancing ambition with joy. I'm here to guide ambitious women to success without sacrificing their well-being.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#services" class="btn-hover bg-cherry hover:bg-cherry text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300">
+                        <i class="fas fa-heart mr-2"></i>
+                        Explore Services
+                    </a>
+                    <a href="#about" class="btn-hover border-2 border-white text-white hover:bg-white hover:text-black font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 fade-in">
+                    <img src="/Images/Tay.png" alt="About Taylah Jade" class="rounded-2xl shadow-xl hover-scale w-full floating-animation">
+                </div>
+                <div class="lg:w-1/2 fade-in text-center lg:text-left">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold mb-6 text-gray-800">About <span class="text-cherry">Taylah Jade</span></h2>
+                                        <p class="text-lg mb-6 leading-relaxed text-gray-600 body-text">
+                        A year ago, I dropped out of my engineering degree, gave up my scholarship, and went all in on myself—with zero guarantees and a $40K investment in the first 3 months.
+
+Today, I run a soul-led business that fuels my freedom. I've worked from Thailand to Europe, had $7K sales weeks, built a dream team, and coached high-achievers to make success non-negotiable—all while living a life that feels as good as it looks.
+                    </p>
+                    <p class="text-lg mb-8 leading-relaxed text-gray-600 body-text">
+                        I'm a personal development coach helping ambitious people build the mindset to unlock next-level business, balance, and bold goals—with <span class="accent-text text-cherry">pleasure, purpose, and resilience</span> at the core. This isn't just business. It's personal.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                        <div class="bg-rose-50 px-4 py-2 rounded-full">
+                            <span class="text-cherry font-semibold">✨ Mindset Coach</span>
+                        </div>
+                        <div class="bg-rose-50 px-4 py-2 rounded-full">
+                            <span class="text-cherry font-semibold">📱 UGC Creator</span>
+                        </div>
+                        <div class="bg-rose-50 px-4 py-2 rounded-full">
+                            <span class="text-cherry font-semibold">💫 Life Balance Expert</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gradient-to-br from-red-50 to-pink-50 to-red-50 border-2 border-red-300 rounded-lg p-4 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="text-center mb-16 fade-in">
+            <h2 class="text-4xl md:text-5xl mb-4 text-black font-semibold" style="font-family: 'Playfair Display', serif;">Services & Programs</h2>
+                        <p class="text-xl max-w-3xl mx-auto elegant-text text-gray-700">Transform your life with personalized coaching and digital solutions designed for ambitious women.</p>
+          </div>
+      
+          <!-- Featured Service -->
+          <div class="bg-white rounded-xl shadow-2xl overflow-hidden mb-12 fade-in hover-scale">
+            <div class="md:flex">
+              <div class="md:w-1/3 relative overflow-hidden group">
+                <img src="Images/banner.png" alt="1:1 Mentorship" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out camera-zoom">
+                <div class="absolute inset-0 bg-black bg-opacity-10 group-hover:bg-opacity-20 transition"></div>
+              </div>
+              <div class="md:w-2/3 p-8 md:p-12 bg-gradient-to-r from-red-50 to-white">
+                <div class="uppercase tracking-wide text-sm font-semibold mb-2" style="color: var(--cherry-red);">Featured Program</div>
+                <h3 class="text-3xl md:text-4xl mb-4" style="font-family: 'Playfair Display', serif;">1:1 Mentorship</h3>
+                <p class="text-gray-600 mb-6">Personalized coaching to help you balance hustle and pleasure while achieving your goals. Get the support, accountability, and strategies you need to create lasting change.</p>
+                <ul class="mb-8 space-y-2">
+                  <li class="flex items-center"><i class="fas fa-check-circle mr-2" style="color: var(--cherry-red);"></i> Personalized coaching sessions</li>
+                  <li class="flex items-center"><i class="fas fa-check-circle mr-2" style="color: var(--cherry-red);"></i> Goal setting and accountability</li>
+                  <li class="flex items-center"><i class="fas fa-check-circle mr-2" style="color: var(--cherry-red);"></i> Mindset transformation</li>
+                  <li class="flex items-center"><i class="fas fa-check-circle mr-2" style="color: var(--cherry-red);"></i> Work-life balance strategies</li>
+                  <li class="flex items-center"><i class="fas fa-check-circle mr-2" style="color: var(--cherry-red);"></i> Ongoing support and guidance</li>
+                </ul>
+                <div class="flex flex-col sm:flex-row items-center justify-between mt-6 gap-4">
+                  <a href="mentorship.html" class="text-white font-bold text-xl sm:text-2xl py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center text-center shadow-md" style="background: linear-gradient(to right, var(--cherry-red), var(--cherry-red-dark));">
+                    <i class="fas fa-heart mr-2"></i>
+                    Book Now!
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+
+          <!-- Other Services - Now permanently visible -->
+          <div id="servicesGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <!-- Service 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden fade-in hover-scale group service-card">
+              <div class="relative overflow-hidden">
+                <img src="Images/banner.png" alt="Pleasured Hustler Club" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out camera-zoom">
+                <div class="absolute inset-0 bg-black bg-opacity-10 group-hover:bg-opacity-20 transition"></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2" style="font-family: 'Playfair Display', serif;">Pleasured Hustler Club</h3>
+                <p class="text-gray-600 mb-4" style="font-family: 'Inter', sans-serif;">A supportive community for ambitious women who want to achieve success while prioritizing their well-being and pleasure.</p>
+                <a href="pleasured-hustler-club.html" style="font-family: 'Playfair Display', serif; color: var(--cherry-red);" class="font-semibold hover:text-red-700 flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+              </div>
+            </div>
+      
+            <!-- Service 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden fade-in hover-scale group service-card">
+              <div class="relative overflow-hidden">
+                <img src="Images/banner.png" alt="3 Day Routine Reset" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out camera-zoom">
+                <div class="absolute inset-0 bg-black bg-opacity-10 group-hover:bg-opacity-20 transition"></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2" style="font-family: 'Playfair Display', serif;">3 Day Routine Reset</h3>
+                <p class="text-gray-600 mb-4" style="font-family: 'Inter', sans-serif;">Reset your daily habits and create a sustainable routine that supports both your productivity and well-being.</p>
+                <a href="routine-reset.html" style="font-family: 'Playfair Display', serif; color: var(--cherry-red);" class="font-semibold hover:text-red-700 flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+              </div>
+            </div>
+      
+            <!-- Service 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden fade-in hover-scale group service-card">
+              <div class="relative overflow-hidden">
+                <img src="Images/banner.png" alt="Digital Notion Organiser" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out camera-zoom">
+                <div class="absolute inset-0 bg-black bg-opacity-10 group-hover:bg-opacity-20 transition"></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2" style="font-family: 'Playfair Display', serif;">Digital Notion Organiser</h3>
+                <p class="text-gray-600 mb-4" style="font-family: 'Inter', sans-serif;">Streamline your life with a comprehensive digital organization system designed for busy entrepreneurs.</p>
+                <a href="digital-notion-organiser.html" class="font-semibold hover:text-red-700 flex items-center" style="font-family: 'Playfair Display', serif; color: var(--cherry-red);">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Product Advertisement Section -->
+    <section id="product-advertisement" class="py-20 bg-gradient-to-br from-red-50 to-pink-50 border-2 border-red-300 rounded-lg p-4 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <!-- Left Side - Image -->
+                <div class="lg:w-1/2 fade-in">
+                    <img src="Images/product.png" alt="Product Advertisement" class="floating-animation hover:shadow-red-900/800 hover:shadow-6xl transition-all duration-300 rounded-lg shadow-xl hover-scale mx-auto" style="width: 400px; height: 600px; object-fit: cover;">
+                </div>
+                
+                <!-- Right Side - Text Content -->
+                <div class="lg:w-1/2 fade-in text-center lg:text-left">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-black" style="font-family: 'Playfair Display', serif;">Product Advertisement</h2>
+            
+                                        <p class="text-lg mb-6 leading-relaxed body-text text-gray-700">
+                        Transform your brand's story with authentic UGC content that resonates with your audience.
+                        As a professional content creator, I specialize in creating engaging, relatable content that drives real results for brands across various industries.
+                    </p>
+            
+                    <p class="text-lg mb-8 leading-relaxed body-text text-gray-700">
+                        From lifestyle photography to product reviews and testimonials, I help brands connect with their target audience through <span class="accent-text text-cherry">genuine, high-quality content</span> that converts viewers into customers.
+                    </p>
+    
+                    <!-- Call to Action Button -->
+                    <div class="mb-8">
+                        <a href="product-advertisement.html" class="inline-block text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:transform hover:scale-105 shadow-md" style="font-family: 'Playfair Display', serif; background: linear-gradient(to right, var(--cherry-red), var(--cherry-red-dark));">
+                            <i class="fas fa-camera mr-2"></i>
+                            View My Work
+                        </a>
+                    </div>
+            
+                    <!-- Feature List -->
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-center lg:justify-start">
+                            <i class="fas fa-check-circle mr-3" style="color: var(--cherry-red);"></i>
+                            <span style="font-family: 'Inter', sans-serif;">Professional UGC Content Creation</span>
+                        </div>
+                        <div class="flex items-center justify-center lg:justify-start">
+                            <i class="fas fa-check-circle mr-3" style="color: var(--cherry-red);"></i>
+                            <span style="font-family: 'Inter', sans-serif;">Brand Collaboration & Partnerships</span>
+                        </div>
+                        <div class="flex items-center justify-center lg:justify-start">
+                            <i class="fas fa-check-circle mr-3" style="color: var(--cherry-red);"></i>
+                            <span style="font-family: 'Inter', sans-serif;">Social Media Content Strategy</span>
+                        </div>
+                        <div class="flex items-center justify-center lg:justify-start">
+                            <i class="fas fa-check-circle mr-3" style="color: var(--cherry-red);"></i>
+                            <span style="font-family: 'Inter', sans-serif;">Authentic Product Reviews & Testimonials</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Podcast Section -->
+    <section id="podcast" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <div class="flex items-center justify-center gap-4 mb-4">
+                    <i class="fas fa-microphone text-4xl" style="color: var(--cherry-red);"></i>
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-black" style="font-family: 'Playfair Display', serif;">Podcast</h2>
+                </div>
+                <p class="text-base sm:text-lg md:text-xl max-w-3xl mx-auto px-4" style="font-family: 'Inter', sans-serif;">Get mindset tips, business insights, and inspiration for balancing hustle with pleasure.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-4 lg:gap-8 max-w-6xl mx-auto px-4">
+                <!-- Music Player (Left Side) with Floating Animation -->
+                <div class="w-full lg:w-1/2">
+                    <div class="rounded-3xl p-4 sm:p-6 shadow-2xl drop-shadow-2xl h-[450px] sm:h-[500px] lg:h-[600px] floating-player" style="background: linear-gradient(135deg, var(--cherry-red), var(--cherry-red-dark));">
+                        <div class="bg-white/20 backdrop-blur-lg rounded-2xl p-3 sm:p-4 h-full flex flex-col">
+                            <!-- Album Art -->
+                            <div class="relative mb-3 sm:mb-4 flex-shrink-0">
+                                <img id="podcast-main-image" src="Images/banner.png" alt="Podcast Cover" class="w-full aspect-square object-cover rounded-xl shadow-lg max-h-32 sm:max-h-40 md:max-h-48 lg:max-h-56">
+                                <div class="absolute inset-0 bg-black/20 rounded-xl"></div>
+                            </div>
+                            
+                            <!-- Song Info -->
+                            <div class="text-white mb-3 sm:mb-4 flex-grow min-h-0">
+                                <h3 id="podcast-main-title" class="text-base sm:text-lg font-bold mb-1 line-clamp-2">Balance Hustle & Pleasure: Finding Your Sweet Spot</h3>
+                                <p id="podcast-main-artist" class="text-white/80 text-xs sm:text-sm">The Taylah Jade Podcast</p>
+                            </div>
+                            
+                            <!-- Progress Bar -->
+                            <div class="mb-3 sm:mb-4 flex-shrink-0">
+                                <div class="flex justify-between text-xs text-white/70 mb-1">
+                                    <span>0:00</span>
+                                    <span id="podcast-duration">25:00</span>
+                                </div>
+                                <div class="w-full bg-white/20 rounded-full h-1">
+                                    <div class="bg-white h-1 rounded-full" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Controls -->
+                            <div class="flex items-center justify-center space-x-4 flex-shrink-0">
+                                <button class="text-white/70 hover:text-white transition-colors">
+                                    <i class="fas fa-step-backward text-base sm:text-lg"></i>
+                                </button>
+                                <button id="podcast-play-btn" class="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center hover:scale-105 transition-transform shadow-lg">
+                                    <i class="fas fa-play text-base sm:text-lg ml-1" style="color: var(--cherry-red);"></i>
+                                </button>
+                                <button class="text-white/70 hover:text-white transition-colors">
+                                    <i class="fas fa-step-forward text-base sm:text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Podcast Episodes List (Right Side) -->
+                <div class="w-full lg:w-1/2">
+                    <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 h-[450px] sm:h-[500px] lg:h-[600px]">
+                        <h3 class="text-lg sm:text-xl font-bold mb-4 sm:mb-6 text-gray-800">Episodes</h3>
+                        <div class="space-y-3 h-[380px] sm:h-[420px] lg:h-[520px] overflow-y-auto custom-scrollbar">
+                            
+                            <!-- Episode 1 -->
+                            <div class="podcast-episode bg-white rounded-lg p-3 cursor-pointer hover:shadow-md transition-all duration-300 border-l-4" style="border-color: var(--cherry-red);">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #FFF5F5;">
+                                        <i class="fas fa-play text-sm" style="color: var(--cherry-red);"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h4 class="font-semibold text-gray-800 truncate text-sm">Balance Hustle & Pleasure: Finding Your Sweet Spot</h4>
+                                        <p class="text-xs text-gray-500">Episode 1 • 25 min</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Episode 2 -->
+                            <div class="podcast-episode bg-white rounded-lg p-3 cursor-pointer hover:shadow-md transition-all duration-300">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #FFF5F5;">
+                                        <i class="fas fa-play text-sm" style="color: var(--cherry-red);"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h4 class="font-semibold text-gray-800 truncate text-sm">Mindset Shifts for Ambitious Women</h4>
+                                        <p class="text-xs text-gray-500">Episode 2 • 30 min</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Episode 3 -->
+                            <div class="podcast-episode bg-white rounded-lg p-3 cursor-pointer hover:shadow-md transition-all duration-300">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #FFF5F5;">
+                                        <i class="fas fa-play text-sm" style="color: var(--cherry-red);"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h4 class="font-semibold text-gray-800 truncate text-sm">Creating Sustainable Success</h4>
+                                        <p class="text-xs text-gray-500">Episode 3 • 28 min</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Episode 4 -->
+                            <div class="podcast-episode bg-white rounded-lg p-3 cursor-pointer hover:shadow-md transition-all duration-300">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #FFF5F5;">
+                                        <i class="fas fa-play text-sm" style="color: var(--cherry-red);"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h4 class="font-semibold text-gray-800 truncate text-sm">The Power of Digital Organization</h4>
+                                        <p class="text-xs text-gray-500">Episode 4 • 22 min</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Episode 5 -->
+                            <div class="podcast-episode bg-white rounded-lg p-3 cursor-pointer hover:shadow-md transition-all duration-300">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #FFF5F5;">
+                                        <i class="fas fa-play text-sm" style="color: var(--cherry-red);"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h4 class="font-semibold text-gray-800 truncate text-sm">Building Your Personal Brand</h4>
+                                        <p class="text-xs text-gray-500">Episode 5 • 35 min</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10 pb-2 fade-in">
+                <a href="#" class="btn-hover bg-white hover:bg-black text-black hover:text-white font-bold py-3 px-8 rounded-full inline-block border-2 border-black">View Latest Episodes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-8 fade-in">
+                <div class="flex items-center justify-center gap-4 mb-4">
+                    <i class="fab fa-youtube text-4xl sm:text-5xl" style="color: var(--cherry-red);"></i>
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-black" style="font-family: 'Playfair Display', serif;">YouTube</h2>
+                </div>
+                <p class="text-base sm:text-lg md:text-xl max-w-3xl mx-auto px-4" style="font-family: 'Inter', sans-serif;">Watch inspiring content about mindset, productivity, and balancing hustle with pleasure to help you thrive in business and life.</p>
+            </div>
+
+            <section class="video-gallery-container">
+                <!-- Main Video Preview Section -->
+                <div class="main-video-section">
+                    <div class="video-thumbnail-container">
+                        <img id="mainThumbnail" src="Images/Thumbnail.jpg" alt="Main Video Thumbnail" class="main-thumbnail">
+                        <div class="play-overlay">
+                            <div id="mainPlayButton" class="play-button">▶</div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-info">
+                        <div class="channel-info">
+                            <div class="channel-logo">
+                                <img src="Images/banner.png" alt="Taylah Jade Logo" class="w-10 h-10 rounded-full object-cover">
+                            </div>
+                            <span class="channel-name">Taylah Jade</span>
+                        </div>
+                        <h2 id="mainTitle" class="video-title">Balance Hustle & Pleasure: The Ultimate Guide to Sustainable Success</h2>
+                    </div>
+                </div>
+            
+                <!-- Sidebar Thumbnails -->
+                <div class="sidebar-thumbnails">
+                    <div class="thumbnail-item active" data-title="Balance Hustle & Pleasure: The Ultimate Guide to Sustainable Success" data-image="Images/Thumbnail.jpg" data-url="https://www.youtube.com/watch?v=60QyVZCHweA&t">
+                        <div class="thumbnail-wrapper">
+                            <img src="Images/Thumbnail.jpg" alt="Thumbnail 1">
+                            <span class="duration">15:30</span>
+                        </div>
+                        <div class="thumbnail-info">
+                            <h4>Weekly Vlog | final week in bali, health reset, wholefoods grocery haul, gym & more!</h4>
+                            <p class="channel-meta">Taylah Jade • 2 days ago</p>
+                        </div>
+                    </div>
+            
+                    <div class="thumbnail-item" data-title="Mindset Shifts That Changed My Business" data-image="Images/Thumbnail2.jpg" data-url="https://www.youtube.com/watch?v=SOFjYckHMoA&t">
+                        <div class="thumbnail-wrapper">
+                            <img src="Images/Thumbnail2.jpg" alt="Thumbnail 2">
+                            <span class="duration">12:45</span>
+                        </div>
+                        <div class="thumbnail-info">
+                            <h4>a week working online in bali! | 6am morning routine, cafes, gym & exciting announcements!</h4>
+                            <p class="channel-meta">Taylah Jade • 1 week ago</p>
+                        </div>
+                    </div>
+            
+                    <div class="thumbnail-item" data-title="How to Create a Digital Organization System That Actually Works" data-image="Images/Thumbnail3.jpg" data-url="https://www.youtube.com/watch?v=CWW6M4l6_Ts">
+                        <div class="thumbnail-wrapper">
+                            <img src="Images/Thumbnail3.jpg" alt="Thumbnail 3">
+                            <span class="duration">18:20</span>
+                        </div>
+                        <div class="thumbnail-info">
+                            <h4>a perfect week in bali 🥥 staying on track on holiday, travel morning routine, tattoos, new cafes</h4>
+                            <p class="channel-meta">Taylah Jade • 2 weeks ago</p>
+                        </div>
+                    </div>
+            
+                    <div class="thumbnail-item" data-title="Building Your Personal Brand as an Ambitious Woman" data-image="Images/Thumbnail4.jpg" data-url="https://www.youtube.com/watch?v=P8Elo05oQ9g&t">
+                        <div class="thumbnail-wrapper">
+                            <img src="Images/thumbnail4.jpg" alt="Thumbnail 4">
+                            <span class="duration">22:15</span>
+                        </div>
+                        <div class="thumbnail-info">
+                            <h4>WEEKLY VLOG | week one of working online in bali for a month! our favourite cafes, gym & markets</h4>
+                            <p class="channel-meta">Taylah Jade • 3 weeks ago</p>
+                        </div>
+                    </div>
+            
+                    <div class="thumbnail-item" data-title="The Truth About Work-Life Balance" data-image="Images/Thumbnail5.jpg" data-url="https://www.youtube.com/watch?v=g6kbeK2FMkQ&t">
+                        <div class="thumbnail-wrapper">
+                            <img src="Images/Thumbnail5.jpg" alt="Thumbnail 5">
+                            <span class="duration">16:40</span>
+                        </div>
+                        <div class="thumbnail-info">
+                            <h4>Weekend Vlog | hosting a dinner party, active recovery, birthday shopping</h4>
+                            <p class="channel-meta">Taylah Jade • 1 month ago</p>
+                        </div>
+                    </div>
+            
+                    <div class="thumbnail-item" data-title="My Morning Routine for Productivity & Pleasure" data-image="Images/Thumbnail6.jpg" data-url="https://www.youtube.com/watch?v=XKZ87ee6Vg8&t">
+                        <div class="thumbnail-wrapper">
+                            <img src="Images/Thumbnail6.jpg" alt="Thumbnail 6">
+                            <span class="duration">14:25</span>
+                        </div>
+                        <div class="thumbnail-info">
+                            <h4>weekend vlog ✨resetting, active recovery routine + new book obsession</h4>
+                            <p class="channel-meta">Taylah Jade • 1 month ago</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="text-center mt-10 pb-2 fade-in">
+                <a href="https://www.youtube.com/@taylahjade1" class="btn-hover bg-white hover:bg-black text-black hover:text-white font-bold py-3 px-8 rounded-full inline-block border-2 border-black" target="_blank">View All Videos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Resources Section -->
+    <section id="resources" class="pb-4 pt-12" style="background-color: #FFF5F5;">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center fade-in">
+                          
+                <h2 class="text-4xl md:text-5xl mb-6 text-black font-semibold" style="font-family: 'Playfair Display', serif;">Free Resources</h2>
+
+                <p class="text-xl mb-8" style="font-family: 'Inter', sans-serif;">Get started with free guides, templates, and weekly mindset tips.</p>
+                
+                <div class="bg-white rounded-xl shadow-lg p-8 mb-8 fade-in hover-scale">
+                    <h3 class="text-2xl mb-4" style="font-family: 'Playfair Display', serif;">Get Weekly Mindset & Business Tips</h3>
+                    <p class="mb-6 text-lg" style="font-family: 'Inter', sans-serif;">Join our newsletter and receive free resources, mindset tips, and exclusive offers.</p>
+                    
+                    <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto" style="font-family: 'Inter', sans-serif;">
+<input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cherry focus:border-cherry" />
+                        <button type="submit" class="btn-hover bg-white hover:bg-black text-black hover:text-white font-bold py-3 px-6 rounded-lg border border-gray-300">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Community Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center fade-in">
+                <h2 class="text-4xl md:text-5xl mb-6 text-black" style="font-family: 'Playfair Display', serif;">Join the Community</h2>
+                <p class="text-xl mb-8" style="font-family: 'Playfair Display', serif;">Connect with like-minded women who are balancing hustle and pleasure.</p>
+                
+                <div class="flex justify-center space-x-6 mb-4">
+                    <a href="#" class="text-3xl text-gray-700 hover:text-cherry transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-3xl text-gray-700 hover:text-cherry transition-colors duration-300"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="text-3xl text-gray-700 hover:text-cherry transition-colors duration-300"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-3xl text-gray-700 hover:text-cherry transition-colors duration-300"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="mb-8">
+                <!-- Mobile: TAYLAH JADE COACHING full width, then 3 columns below -->
+                <!-- Desktop: All 4 sections in one row -->
+                <div class="block md:hidden">
+                    <!-- Mobile layout -->
+                    <div class="mb-8">
+                        <div class="text-center" style="font-family: 'Playfair Display', serif;">
+                            <h3 class="text-xl mb-4">TAYLAH JADE COACHING</h3>
+                            <p class="mb-4">Helping ambitious women balance hustle and pleasure through mindset coaching and digital solutions.</p>
+                            <div class="flex space-x-4 justify-center">
+                                <a href="#" class="text-white hover:text-cherry transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="text-white hover:text-cherry transition-colors duration-300"><i class="fab fa-tiktok"></i></a>
+                                <a href="#" class="text-white hover:text-cherry transition-colors duration-300"><i class="fab fa-facebook"></i></a>
+                                <a href="#" class="text-white hover:text-cherry transition-colors duration-300"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Three columns for mobile -->
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="text-center" style="font-family: 'Inter', sans-serif;">
+                            <h4 class="text-lg mb-4">Explore</h4>
+                            <ul class="space-y-2">
+                                <li><a href="#home" class="hover:text-cherry transition-colors duration-300">Home</a></li>
+                                <li><a href="#about" class="hover:text-cherry transition-colors duration-300">About</a></li>
+                                <li><a href="#services" class="hover:text-cherry transition-colors duration-300">Services</a></li>
+                                <li><a href="#podcast" class="hover:text-cherry transition-colors duration-300">Podcast</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="text-center">
+                            <h4 class="text-lg mb-4" style="font-family: 'Inter', sans-serif;">Services</h4>
+                            <ul class="space-y-2">
+                                <li><a href="mentorship.html" class="hover:text-cherry transition-colors duration-300">1:1 Mentorship</a></li>
+                                <li><a href="pleasured-hustler-club.html" class="hover:text-cherry transition-colors duration-300">Pleasured Hustler Club</a></li>
+                                <li><a href="routine-reset.html" class="hover:text-cherry transition-colors duration-300">3 Day Routine Reset</a></li>
+                                <li><a href="digital-notion-organiser.html" class="hover:text-cherry transition-colors duration-300">Digital Organiser</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="text-center">
+                            <h4 class="text-lg mb-4" style="font-family: 'Inter', sans-serif;">Contact</h4>
+                            <ul class="space-y-2">
+                                <li><a href="mailto:hello@taylahjade.com" class="hover:text-cherry transition-colors duration-300">Email</a></li>
+                                <li><a href="#" class="hover:text-cherry transition-colors duration-300">Instagram</a></li>
+                                <li><a href="#" class="hover:text-cherry transition-colors duration-300">TikTok</a></li>
+                                <li><a href="#resources" class="hover:text-cherry transition-colors duration-300">Free Resources</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Desktop layout - 4 columns -->
+                <div class="hidden md:grid md:grid-cols-4 gap-8">
+                    <div class="text-left" style="font-family: 'Playfair Display', serif;">
+                        <h3 class="text-xl mb-4">TAYLAH JADE COACHING</h3>
+                        <p class="mb-4">Helping ambitious women balance hustle and pleasure through mindset coaching and digital solutions.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-white hover:text-cherry transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-white hover:text-cherry transition-colors duration-300"><i class="fab fa-tiktok"></i></a>
+                            <a href="#" class="text-white hover:text-cherry transition-colors duration-300"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-white hover:text-cherry transition-colors duration-300"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="text-left" style="font-family: 'Inter', sans-serif;">
+                        <h4 class="text-lg mb-4">Explore</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="hover:text-cherry transition-colors duration-300">Home</a></li>
+                            <li><a href="#about" class="hover:text-cherry transition-colors duration-300">About</a></li>
+                            <li><a href="#services" class="hover:text-cherry transition-colors duration-300">Services</a></li>
+                            <li><a href="#podcast" class="hover:text-cherry transition-colors duration-300">Podcast</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-left">
+                        <h4 class="text-lg mb-4" style="font-family: 'Inter', sans-serif;">Services</h4>
+                        <ul class="space-y-2">
+                            <li><a href="mentorship.html" class="hover:text-cherry transition-colors duration-300">1:1 Mentorship</a></li>
+                            <li><a href="pleasured-hustler-club.html" class="hover:text-cherry transition-colors duration-300">Pleasured Hustler Club</a></li>
+                            <li><a href="routine-reset.html" class="hover:text-cherry transition-colors duration-300">3 Day Routine Reset</a></li>
+                            <li><a href="digital-notion-organiser.html" class="hover:text-cherry transition-colors duration-300">Digital Organiser</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-left">
+                        <h4 class="text-lg mb-4" style="font-family: 'Inter', sans-serif;">Contact</h4>
+                        <ul class="space-y-2">
+                            <li><a href="mailto:hello@taylahjade.com" class="hover:text-cherry transition-colors duration-300">Email</a></li>
+                            <li><a href="#" class="hover:text-cherry transition-colors duration-300">Instagram</a></li>
+                            <li><a href="#" class="hover:text-cherry transition-colors duration-300">TikTok</a></li>
+                            <li><a href="#resources" class="hover:text-cherry transition-colors duration-300">Free Resources</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 text-center text-gray-400 font-bold" style="font-family: 'Playfair Display', serif;">
+                <p>&copy; 2025 Taylah Jade Coaching. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        // Enhanced mobile menu functionality
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('-translate-x-full');
+            document.body.classList.toggle('overflow-hidden'); // Prevent background scrolling
+        }
+        
+        if (menuBtn) {
+            menuBtn.addEventListener('click', toggleMobileMenu);
+        }
+        
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleMobileMenu();
+            });
+        });
+        
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !mobileMenu.classList.contains('-translate-x-full')) {
+                toggleMobileMenu();
+            }
+        });
+        
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            observer.observe(el);
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Improved touch handling for video gallery
+        if ('ontouchstart' in window) {
+            document.querySelectorAll('.thumbnail-item').forEach(item => {
+                item.addEventListener('touchstart', function() {
+                    this.style.backgroundColor = '#FFF5F5';
+                });
+                
+                item.addEventListener('touchend', function() {
+                    setTimeout(() => {
+                        this.style.backgroundColor = '';
+                    }, 150);
+                });
+            });
+        }
+        
+        // Responsive font sizing based on viewport
+        function adjustFontSizes() {
+            const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+            const heroTitle = document.querySelector('#home h1');
+            
+            if (vw < 375) {
+                // Very small screens
+                if (heroTitle) heroTitle.style.fontSize = '2rem';
+            } else if (vw < 640) {
+                // Small screens
+                if (heroTitle) heroTitle.style.fontSize = '2.5rem';
+            }
+        }
+        
+        // Call on load and resize
+        window.addEventListener('load', adjustFontSizes);
+        window.addEventListener('resize', adjustFontSizes);
+        
+        // Improved scroll performance for mobile
+        let ticking = false;
+        
+        function updateNavbar() {
+            const nav = document.getElementById('navbar');
+            const heroSection = document.getElementById('home');
+            const heroHeight = heroSection.offsetHeight;
+            
+            if (window.scrollY > heroHeight - 100) {
+                nav.classList.add('navbar-scrolled');
+            } else {
+                nav.classList.remove('navbar-scrolled');
+            }
+            
+            ticking = false;
+        }
+        
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(updateNavbar);
+                ticking = true;
+            }
+        });
+
+        // Video Gallery JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    const thumbnailItems = document.querySelectorAll('.thumbnail-item');
+    const mainThumbnail = document.getElementById('mainThumbnail');
+    const mainTitle = document.getElementById('mainTitle');
+    const mainPlayButton = document.getElementById('mainPlayButton');
+    let currentVideoUrl = 'https://www.youtube.com/watch?v=example1'; // Default URL
+    
+    // Add click event to main play button
+    if (mainPlayButton) {
+        mainPlayButton.addEventListener('click', function() {
+            window.open(currentVideoUrl, '_blank');
+        });
+    }
+    
+    // Add click event listeners to thumbnail items
+    thumbnailItems.forEach(item => {
+        item.addEventListener('click', function() {
+            // Remove active class from all items
+            thumbnailItems.forEach(thumb => thumb.classList.remove('active'));
+            
+            // Add active class to clicked item
+            this.classList.add('active');
+            
+            // Get data from clicked thumbnail
+            const newTitle = this.getAttribute('data-title');
+            const newImage = this.getAttribute('data-image');
+            const newUrl = this.getAttribute('data-url');
+            
+            // Update current video URL
+            currentVideoUrl = newUrl;
+            
+            // Update main video section with smooth transition
+            if (mainThumbnail) {
+                mainThumbnail.style.opacity = '0.7';
+                
+                setTimeout(() => {
+                    mainThumbnail.src = newImage;
+                    if (mainTitle) mainTitle.textContent = newTitle;
+                    mainThumbnail.style.opacity = '1';
+                }, 150);
+                
+                // Add a subtle pulse effect to the main thumbnail
+                mainThumbnail.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    mainThumbnail.style.transform = 'scale(1)';
+                }, 200);
+            }
+        });
+        
+        // Add double-click to open video directly from thumbnail
+        item.addEventListener('dblclick', function() {
+            const videoUrl = this.getAttribute('data-url');
+            window.open(videoUrl, '_blank');
+        });
+    });
+});
+    </script>
+</body>
+</html>
