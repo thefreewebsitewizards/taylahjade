@@ -6,12 +6,16 @@
     <title>1:1 Mentorship | Taylah Jade Coaching</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
+            --hot-pink: #FF1493;
+            --deep-pink: #C2185B;
             --cherry-red: #DC143C;
             --cherry-red-dark: #B91C3C;
+            --black: #000000;
+            --dark-gray: #1a1a1a;
         }
 
         body {
@@ -19,23 +23,57 @@
         }
 
         h1, h2, h3, h4, .font-display {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Anton', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .bg-cherry {
             background-color: var(--cherry-red);
         }
 
+        .bg-hot-pink {
+            background-color: var(--hot-pink);
+        }
+
+        .bg-deep-pink {
+            background-color: var(--deep-pink);
+        }
+
+        .bg-black {
+            background-color: var(--black);
+        }
+
         .text-cherry {
             color: var(--cherry-red);
+        }
+
+        .text-hot-pink {
+            color: var(--hot-pink);
+        }
+
+        .text-deep-pink {
+            color: var(--deep-pink);
+        }
+
+        .text-black {
+            color: var(--black);
         }
 
         .border-cherry {
             border-color: var(--cherry-red);
         }
 
+        .border-hot-pink {
+            border-color: var(--hot-pink);
+        }
+
         .hover\:bg-cherry:hover {
             background-color: var(--cherry-red-dark);
+        }
+
+        .hover\:bg-hot-pink:hover {
+            background-color: var(--deep-pink);
         }
 
         .btn-hover {
@@ -99,7 +137,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative py-20 lg:py-32 bg-gradient-to-br from-rose-50 to-red-50 overflow-hidden">
+    <section class="relative py-20 lg:py-32 bg-gradient-to-br from-pink-50 via-rose-50 to-red-50 overflow-hidden">
         <div class="container mx-auto px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <!-- Left side - Text content -->
@@ -145,32 +183,32 @@
             
             <div class="max-w-4xl mx-auto">
                 <div class="grid md:grid-cols-2 gap-8">
-                    <div class="text-center p-8 bg-gradient-to-br from-rose-50 to-red-50 rounded-2xl">
-                        <div class="text-cherry text-4xl mb-4">
+                    <div class="text-center p-8 bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl">
+                        <div class="text-deep-pink text-4xl mb-4">
                             <i class="fas fa-briefcase"></i>
                         </div>
                         <h3 class="text-2xl font-serif font-bold text-gray-800 mb-4">Leaving a career that drains you</h3>
                         <p class="text-gray-600 leading-relaxed font-serif">Ready to step away from the 9-5 that no longer serves your growth and purpose.</p>
                     </div>
                     
-                    <div class="text-center p-8 bg-gradient-to-br from-rose-50 to-red-50 rounded-2xl">
-                        <div class="text-cherry text-4xl mb-4">
+                    <div class="text-center p-8 bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl">
+                        <div class="text-hot-pink text-4xl mb-4">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
                         <h3 class="text-2xl font-serif font-bold text-gray-800 mb-4">Ditching a degree you don't care about</h3>
                         <p class="text-gray-600 leading-relaxed font-serif">Choosing your own path over societal expectations and family pressure.</p>
                     </div>
                     
-                    <div class="text-center p-8 bg-gradient-to-br from-rose-50 to-red-50 rounded-2xl">
-                        <div class="text-cherry text-4xl mb-4">
+                    <div class="text-center p-8 bg-gradient-to-br from-gray-900 to-black rounded-2xl">
+                        <div class="text-hot-pink text-4xl mb-4">
                             <i class="fas fa-wine-glass"></i>
                         </div>
-                        <h3 class="text-2xl font-serif font-bold text-gray-800 mb-4">No longer drinking to "fit in"</h3>
-                        <p class="text-gray-600 leading-relaxed font-serif">Breaking free from social pressures and choosing authentic connections.</p>
+                        <h3 class="text-2xl font-serif font-bold text-white mb-4">No longer drinking to "fit in"</h3>
+                        <p class="text-gray-300 leading-relaxed font-serif">Breaking free from social pressures and choosing authentic connections.</p>
                     </div>
                     
-                    <div class="text-center p-8 bg-gradient-to-br from-rose-50 to-red-50 rounded-2xl">
-                        <div class="text-cherry text-4xl mb-4">
+                    <div class="text-center p-8 bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl">
+                        <div class="text-deep-pink text-4xl mb-4">
                             <i class="fas fa-heart"></i>
                         </div>
                         <h3 class="text-2xl font-serif font-bold text-gray-800 mb-4">Ready to chase clarity, freedom, and joy</h3>
