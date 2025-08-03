@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         :root {
             --hot-pink: #FF1493;
             --deep-pink: #C2185B;
-            --cherry-red: #DC143C;
-            --cherry-red-dark: #B91C3C;
+            --soft-pink: #FFB6C1;
+            --cherry-red: #E91E63;
+            --cherry-red-dark: #C2185B;
             --black: #000000;
             --dark-gray: #1a1a1a;
         }
@@ -26,6 +28,18 @@
             font-family: 'Anton', sans-serif;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+        }
+        
+        .font-anton {
+            font-family: 'Anton', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .font-calligraphy {
+            font-family: 'Great Vibes', cursive;
+            text-transform: none;
+            letter-spacing: normal;
         }
 
         .bg-cherry {
@@ -80,9 +94,17 @@
             transition: all 0.3s ease;
         }
 
+        .bg-soft-pink {
+            background-color: var(--soft-pink);
+        }
+        
+        .text-soft-pink {
+            color: var(--soft-pink);
+        }
+        
         .btn-hover:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(220, 20, 60, 0.3);
+            box-shadow: 0 8px 25px rgba(255, 182, 193, 0.4);
         }
 
         .fade-in {
@@ -143,7 +165,7 @@
                 <!-- Left side - Text content -->
                 <div class="text-center lg:text-left">
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gray-800 mb-6 leading-tight">
-                        Stop settling for a life that feels <span class="text-cherry">small</span>
+                        <span class="font-anton">Stop settling for a life that feels</span> <span class="font-calligraphy text-cherry">small</span>
                     </h1>
                     <p class="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
                         You're ambitious, driven, and ready for more. But somewhere along the way, you started playing it safe. Let's change that.

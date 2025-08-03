@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         :root {
             --hot-pink: #FF1493;
             --deep-pink: #C2185B;
-            --cherry-red: #DC143C;
-            --cherry-red-dark: #B91C3C;
+            --soft-pink: #FF69B4;
+            --cherry-red: #E91E63;
+            --cherry-red-dark: #AD1457;
             --black: #000000;
             --dark-gray: #1a1a1a;
         }
@@ -27,6 +29,50 @@
             font-family: 'Anton', sans-serif;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+        }
+        
+        .font-anton {
+            font-family: 'Anton', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Hamburger Icon Animation */
+        .hamburger-icon {
+            width: 24px;
+            height: 18px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .hamburger-line {
+            width: 100%;
+            height: 2px;
+            background-color: currentColor;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+        
+        /* Active state - transform to X */
+        #menu-btn.active .hamburger-line:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        
+        #menu-btn.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        
+        #menu-btn.active .hamburger-line:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        
+        .font-calligraphy {
+            font-family: 'Great Vibes', cursive;
+            text-transform: none;
+            letter-spacing: normal;
+            font-weight: 400;
         }
         
         /* Enhanced typography for better readability and elegance */
@@ -86,14 +132,14 @@
         }
         
         .btn-hot-pink {
-            background: linear-gradient(135deg, var(--hot-pink) 0%, var(--deep-pink) 100%);
+            background: linear-gradient(135deg, var(--soft-pink) 0%, var(--hot-pink) 100%);
             transition: all 0.3s ease;
         }
         
         .btn-hot-pink:hover {
-            background: linear-gradient(135deg, var(--deep-pink) 0%, var(--cherry-red) 100%);
+            background: linear-gradient(135deg, var(--hot-pink) 0%, var(--cherry-red) 100%);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 20, 147, 0.4);
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
         }
         
         .btn-black {
@@ -172,6 +218,10 @@
             background-color: var(--deep-pink);
         }
         
+        .bg-soft-pink {
+            background-color: var(--soft-pink);
+        }
+        
         .bg-black {
             background-color: var(--black);
         }
@@ -182,6 +232,10 @@
         
         .text-hot-pink {
             color: var(--hot-pink);
+        }
+        
+        .text-soft-pink {
+            color: var(--soft-pink);
         }
         
         .text-deep-pink {
@@ -376,13 +430,13 @@
                 padding: 0 1rem;
             }
             
-            /* Hide video and show image on mobile */
+            /* Show video on mobile too */
             .hero-video {
-                display: none;
+                display: block;
             }
             
             .hero-image {
-                display: block;
+                display: none;
             }
             
             /* Button improvements for mobile */
@@ -913,7 +967,11 @@
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
                     <button id="menu-btn" class="text-white hover:text-cherry focus:outline-none p-2 rounded-lg hover:bg-white/10 transition-all duration-300">
-                        <i class="fas fa-bars text-2xl"></i>
+                        <div class="hamburger-icon">
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                        </div>
                     </button>
                 </div>
                 
@@ -931,15 +989,10 @@
     </nav>
 
     <!-- Mobile Side Menu -->
-    <div id="mobile-menu" class="fixed inset-0 z-40 md:hidden transform -translate-x-full transition-transform duration-300 ease-in-out">
+    <div id="mobile-menu" class="fixed top-16 right-0 bottom-0 left-0 z-40 md:hidden transform translate-x-full transition-transform duration-300 ease-in-out">
         <div class="absolute inset-0 bg-black bg-opacity-50" onclick="toggleMobileMenu()"></div>
-        <div class="relative w-64 h-full bg-white shadow-xl">
-            <div class="flex justify-end p-4">
-                <button onclick="toggleMobileMenu()" class="text-gray-800 focus:outline-none">
-                    <i class="fas fa-times text-2xl"></i>
-                </button>
-            </div>
-            <div class="px-4 py-0">
+        <div class="relative w-64 h-full bg-white shadow-xl ml-auto">
+            <div class="px-4 py-4">
                 <a href="#home" class="block py-3 px-4 mb-2 hover:bg-cherry hover:text-white rounded-full transition-all duration-300">Home</a>
                 <a href="#about" class="block py-3 px-4 mb-2 hover:bg-cherry hover:text-white rounded-full transition-all duration-300">About</a>
                 <a href="#services" class="block py-3 px-4 mb-2 hover:bg-cherry hover:text-white rounded-full transition-all duration-300">Services</a>
@@ -951,8 +1004,8 @@
     <section id="home" class="min-h-screen flex items-center justify-center py-20 relative overflow-hidden hero-section">
         <!-- Video Background (Desktop) -->
         <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover z-0 hero-video">
-            <source src="Images/hero-bg-video2.mp4" type="video/mp4">
-            <source src="Images/hero-bg-video1.mov" type="video/quicktime">
+            <source src="Images/vid2.mp4" type="video/mp4">
+            <source src="Images/vid2.mp4" type="video/quicktime">
             Your browser does not support the video tag.
         </video>
         
@@ -964,9 +1017,9 @@
         
         <div class="container mx-auto px-6 relative z-20">
             <div class="text-center slide-in-up">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6 text-white leading-tight">
-                    Balance <span class="text-cherry">Hustle</span><br>
-                    & <span class="text-cherry">Pleasure</span>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight">
+                    <span class="font-anton">Balance <span class="text-cherry">Hustle</span><br>
+                    &</span> <span class="font-calligraphy text-cherry">Pleasure</span>
                 </h1>
                 <p class="text-lg accent-text  sm:text-xl mb-8 text-white leading-relaxed max-w-2xl mx-auto hero-text">
                     <span class="accent-text text-xl">Transform your mindset</span> and master the art of balancing ambition with joy. I'm here to guide ambitious women to success without sacrificing their well-being.
@@ -1099,52 +1152,52 @@ Today, I run a soul-led business that fuels my freedom. I've worked from Thailan
       </section>
 
       <!-- Product Advertisement Section -->
-    <section id="product-advertisement" class="py-20 bg-gradient-to-br from-red-50 to-pink-50 border-2 border-red-300 rounded-lg p-4 relative overflow-hidden">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
+    <section id="product-advertisement" class="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-red-50 to-pink-50 border-2 border-red-300 rounded-lg p-2 sm:p-4 relative overflow-hidden">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-6 sm:gap-8 lg:gap-12">
                 <!-- Left Side - Image -->
-                <div class="lg:w-1/2 fade-in">
-                    <img src="Images/product.png" alt="Product Advertisement" class="floating-animation hover:shadow-red-900/800 hover:shadow-6xl transition-all duration-300 rounded-lg shadow-xl hover-scale mx-auto" style="width: 400px; height: 600px; object-fit: cover;">
+                <div class="w-full lg:w-1/2 fade-in">
+                    <img src="Images/product.png" alt="Product Advertisement" class="floating-animation hover:shadow-red-900/800 hover:shadow-6xl transition-all duration-300 rounded-lg shadow-xl hover-scale mx-auto w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg" style="height: auto; object-fit: cover;">
                 </div>
                 
                 <!-- Right Side - Text Content -->
-                <div class="lg:w-1/2 fade-in text-center lg:text-left">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-black" style="font-family: 'Playfair Display', serif;">Product Advertisement</h2>
+                <div class="w-full lg:w-1/2 fade-in text-center lg:text-left px-2 sm:px-0">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-black" style="font-family: 'Playfair Display', serif;">Product Advertisement</h2>
             
-                                        <p class="text-lg mb-6 leading-relaxed body-text text-gray-700">
+                    <p class="text-base sm:text-lg mb-4 sm:mb-6 leading-relaxed body-text text-gray-700">
                         Transform your brand's story with authentic UGC content that resonates with your audience.
                         As a professional content creator, I specialize in creating engaging, relatable content that drives real results for brands across various industries.
                     </p>
             
-                    <p class="text-lg mb-8 leading-relaxed body-text text-gray-700">
+                    <p class="text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed body-text text-gray-700">
                         From lifestyle photography to product reviews and testimonials, I help brands connect with their target audience through <span class="accent-text text-cherry">genuine, high-quality content</span> that converts viewers into customers.
                     </p>
     
                     <!-- Call to Action Button -->
-                    <div class="mb-8">
-                        <a href="product-advertisement.html" class="inline-block text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:transform hover:scale-105 shadow-md" style="font-family: 'Playfair Display', serif; background: linear-gradient(to right, var(--cherry-red), var(--cherry-red-dark));">
+                    <div class="mb-6 sm:mb-8">
+                        <a href="product-advertisement.html" class="inline-block text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 text-sm sm:text-base rounded-full transition-all duration-300 hover:transform hover:scale-105 shadow-md" style="font-family: 'Playfair Display', serif; background: linear-gradient(to right, var(--cherry-red), var(--cherry-red-dark));">
                             <i class="fas fa-camera mr-2"></i>
                             View My Work
                         </a>
                     </div>
             
                     <!-- Feature List -->
-                    <div class="space-y-3">
+                    <div class="space-y-2 sm:space-y-3">
                         <div class="flex items-center justify-center lg:justify-start">
-                            <i class="fas fa-check-circle mr-3" style="color: var(--cherry-red);"></i>
-                            <span style="font-family: 'Inter', sans-serif;">Professional UGC Content Creation</span>
+                            <i class="fas fa-check-circle mr-2 sm:mr-3 text-sm sm:text-base flex-shrink-0" style="color: var(--cherry-red);"></i>
+                            <span class="text-sm sm:text-base" style="font-family: 'Inter', sans-serif;">Professional UGC Content Creation</span>
                         </div>
                         <div class="flex items-center justify-center lg:justify-start">
-                            <i class="fas fa-check-circle mr-3" style="color: var(--cherry-red);"></i>
-                            <span style="font-family: 'Inter', sans-serif;">Brand Collaboration & Partnerships</span>
+                            <i class="fas fa-check-circle mr-2 sm:mr-3 text-sm sm:text-base flex-shrink-0" style="color: var(--cherry-red);"></i>
+                            <span class="text-sm sm:text-base" style="font-family: 'Inter', sans-serif;">Brand Collaboration & Partnerships</span>
                         </div>
                         <div class="flex items-center justify-center lg:justify-start">
-                            <i class="fas fa-check-circle mr-3" style="color: var(--cherry-red);"></i>
-                            <span style="font-family: 'Inter', sans-serif;">Social Media Content Strategy</span>
+                            <i class="fas fa-check-circle mr-2 sm:mr-3 text-sm sm:text-base flex-shrink-0" style="color: var(--cherry-red);"></i>
+                            <span class="text-sm sm:text-base" style="font-family: 'Inter', sans-serif;">Social Media Content Strategy</span>
                         </div>
                         <div class="flex items-center justify-center lg:justify-start">
-                            <i class="fas fa-check-circle mr-3" style="color: var(--cherry-red);"></i>
-                            <span style="font-family: 'Inter', sans-serif;">Authentic Product Reviews & Testimonials</span>
+                            <i class="fas fa-check-circle mr-2 sm:mr-3 text-sm sm:text-base flex-shrink-0" style="color: var(--cherry-red);"></i>
+                            <span class="text-sm sm:text-base" style="font-family: 'Inter', sans-serif;">Authentic Product Reviews & Testimonials</span>
                         </div>
                     </div>
                 </div>
@@ -1548,8 +1601,9 @@ Today, I run a soul-led business that fuels my freedom. I've worked from Thailan
         
         // Enhanced mobile menu functionality
         function toggleMobileMenu() {
-            mobileMenu.classList.toggle('-translate-x-full');
+            mobileMenu.classList.toggle('translate-x-full');
             document.body.classList.toggle('overflow-hidden'); // Prevent background scrolling
+            menuBtn.classList.toggle('active');
         }
         
         if (menuBtn) {

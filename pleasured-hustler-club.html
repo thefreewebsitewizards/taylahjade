@@ -9,15 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'cherry': '#DC143C',
-                        'cherry-dark': '#B91C3C',
+                        'cherry': '#E91E63',
+                        'cherry-dark': '#C2185B',
                         'hot-pink': '#FF1493',
                         'deep-pink': '#C2185B',
+                        'soft-pink': '#FFB6C1',
                         'black': '#000000',
                     },
                     fontFamily: {
@@ -53,6 +55,18 @@
                 transform: translateY(0);
             }
         }
+        
+        .font-anton {
+            font-family: 'Anton', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .font-calligraphy {
+            font-family: 'Great Vibes', cursive;
+            text-transform: none;
+            letter-spacing: normal;
+        }
     </style>
 </head>
 <body class="bg-white font-body">
@@ -78,7 +92,7 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-5xl mx-auto">
                 <h1 class="text-4xl sm:text-5xl lg:text-7xl font-display font-bold mb-6 text-gray-800 leading-tight">
-                    Pleasured <span class="text-cherry">Hustler Club</span>
+                    <span class="font-anton">Pleasured</span> <span class="font-calligraphy text-cherry">Hustler Club</span>
                 </h1>
                 <h2 class="text-xl sm:text-2xl lg:text-3xl font-display font-medium mb-6 text-gray-700">
                     The Go-to Membership for Designing your Perfect Work Life Balance.
